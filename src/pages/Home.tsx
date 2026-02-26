@@ -4,7 +4,7 @@ import Car from "../components/Car";
 import {cars} from "../data/carsdata";
 import { useState } from "react";
 
-function App () {
+function Home () {
     const [selection, setSelection] = useState<number[]>([]);
 
     const handleSelection = (id: number) => {
@@ -33,4 +33,4 @@ function App () {
     );
 };
 
-export default App;
+export default Home;
