@@ -1,5 +1,6 @@
 import logo from "../assets/logo.png";
 import type { ICars } from "../interfaces/cars";
+import { Link } from "react-router";
 
 interface INavigationBarProps {
     selection: number[];
@@ -7,7 +8,11 @@ interface INavigationBarProps {
     removeFromSelection: (id: number) => void;
 }
 
-const NavigationBar = ({ selection, cars, removeFromSelection }: INavigationBarProps) => {
+const NavigationBar = ({
+    selection,
+    cars,
+    removeFromSelection,
+}: INavigationBarProps) => {
     const selectedCars = cars.filter((car) => selection.includes(car.id));
 
     return (
@@ -76,15 +81,31 @@ const NavigationBar = ({ selection, cars, removeFromSelection }: INavigationBarP
                         ))}
                     </ul>
 
-                    <button className="px-5 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white border border-neutral-700 hover:border-blue-600 hover:text-blue-500 hover:bg-neutral-800 transition duration-300">
+                    <Link to="/Model"
+                        className="px-5 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white border border-neutral-700
+                        hover:border-blue-600 hover:text-blue-500 hover:bg-neutral-800 transition duration-300"
+                    >
+                        Model
+                    </Link>
+                    <Link to="/"
+                        className="px-5 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white border border-neutral-700
+                        hover:border-blue-600 hover:text-blue-500 hover:bg-neutral-800 transition duration-300"
+                    >
                         Home
-                    </button>
-                    <button className="px-5 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white border border-neutral-700 hover:border-blue-600 hover:text-blue-500 hover:bg-neutral-800 transition duration-300">
-                        Maintenance
-                    </button>
-                    <button className="px-5 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white border border-neutral-700 hover:border-blue-600 hover:text-blue-500 hover:bg-neutral-800 transition duration-300">
-                        Blog
-                    </button>
+                    </Link>
+
+                    <Link to="/Signin"
+                        className="px-5 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white border border-neutral-700
+                        hover:border-blue-600 hover:text-blue-500 hover:bg-neutral-800 transition duration-300"
+                    >
+                        Signin
+                    </Link>
+                    <Link to="/Signup"
+                        className="px-5 py-2 text-sm font-medium rounded-lg bg-neutral-900 text-white border border-neutral-700
+                        hover:border-blue-600 hover:text-blue-500 hover:bg-neutral-800 transition duration-300"
+                    >
+                        Signup
+                    </Link>
                 </div>
             </div>
         </nav>
